@@ -9,11 +9,11 @@
   </thead>
   <tbody>
 
-    <tr *ngFor="let user of users;let i = index">
-      <th scope="row">{{i}}</th>
-      <td>{{user.name}}</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <tr *ngFor="let user of transactions;let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{user.sender.email}}</td>
+      <td>{{user.reciever.email}}</td>
+      <td>{{user.amount}}</td>
     </tr>
 
   </tbody>

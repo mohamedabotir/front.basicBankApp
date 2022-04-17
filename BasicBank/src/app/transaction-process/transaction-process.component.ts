@@ -1,6 +1,7 @@
 import { TransferService } from './../Services/transfer.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../Shared/Users';
+import { Transfer } from '../Shared/transfer';
 
 @Component({
   selector: 'app-transaction-process',
@@ -14,11 +15,12 @@ export class TransactionProcessComponent implements OnInit {
   ngOnInit(): void {
     this.getUsers();
   }
-  public users?:User[];
+  public transactions?:Transfer[];
   getUsers(){
-       this.users = [];
-        this.trans.getAllUsers().subscribe(data=>{
-         this.users = data;
+       this.transactions = [];
+        this.trans.GetTransactions().subscribe(data=>{
+         this.transactions = data;
+         console.log(this.transactions);
       });
     }
 }

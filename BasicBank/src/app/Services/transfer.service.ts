@@ -18,4 +18,7 @@ export class TransferService {
   postTransfer(transfer:Transfer):Observable<string>{
    return this.client.post<string>(this.api+"Transfer",transfer);
   }
+  GetTransactions():Observable<Transfer[]>{
+    return this.client.get<Transfer[]>(this.api+"GetTransactions")
+  }
 }

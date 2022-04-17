@@ -1,5 +1,6 @@
+import { User } from './Users';
 export interface Transfer{
-  senderEmail:String,
-  receiverEmail:String,
-  money:Number
+  sender:User,
+  reciever:User,
+  amount:Number
 }
