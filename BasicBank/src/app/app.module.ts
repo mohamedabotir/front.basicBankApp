@@ -6,21 +6,32 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TransferService } from './Services/transfer.service';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { InterceptorService } from './Services/interceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TransactionProcessComponent } from './transaction-process/transaction-process.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    TransactionProcessComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
-  providers: [TransferService],
+  providers: [TransferService,{
+    provide:HTTP_INTERCEPTORS,
+    useClass:InterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

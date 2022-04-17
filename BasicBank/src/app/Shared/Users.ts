@@ -1,6 +1,6 @@
 export interface User{
-  Id:Number
-Email:String
-Name:String
-Balance:Number
+id:Number
+email:String
+name:String
+balance:Number
 }
