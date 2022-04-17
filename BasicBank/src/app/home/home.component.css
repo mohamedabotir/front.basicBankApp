@@ -1,0 +1,20 @@
+.img-service{
+  text-align: center;
+}
+.img-service > img{
+  margin-top: 0.5em;
+width: 100%;
+display: inline-block;
+position: relative;
+}
+.service{
+  position: absolute;
+  top: 3em;
+  left: 30%;
+}
+.btn-success{
+  position: absolute;
+  top: 40em;
+  left: 20%;
+  width: 50em;
+}

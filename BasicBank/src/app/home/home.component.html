@@ -1,0 +1,45 @@
+<div class="img-service">
+<img src="../../assets/41249-banking-wallpaper-top-free-banking-background.jpg">
+</div>
+<h2 class="service">Welcome to Transfer Service Money</h2>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Transfer
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Choose User To Transfer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="sender">Choose Sender</label>
+
+        <select id="sender" class="form-control">
+          <option selected>Open this select menu</option>
+          <ng-container *ngFor="let user of users">
+            <option value="{{user.Id}}" #data>{{user.Name}}</option>
+          </ng-container>
+        </select>
+        <label for="reciever">Choose Reciever</label>
+        <select id="reciever" class="form-control">
+         <option value="">test2</option>
+        </select>
+        <input type="number" min="1" placeholder="Transfer Value" class="form-control">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Transfer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let user of users">
+  <a>{{user.Name}}</a>
+</div>
