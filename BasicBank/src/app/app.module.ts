@@ -12,11 +12,13 @@ import { ToastrModule } from 'ngx-toastr';
 import { InterceptorService } from './Services/interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TransactionProcessComponent } from './transaction-process/transaction-process.component';
+import { CustomersComponent } from './customers/customers.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    TransactionProcessComponent
+    TransactionProcessComponent,
+    CustomersComponent
   ],
   imports: [
     BrowserModule,
