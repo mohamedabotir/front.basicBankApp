@@ -1,3 +1,8 @@
 table{
   color: aliceblue;
 }
+.transfer-form{
+  width: 50%;
+  color: aliceblue;
+  margin-bottom: 1em;
+}
