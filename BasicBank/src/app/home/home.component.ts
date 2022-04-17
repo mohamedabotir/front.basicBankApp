@@ -1,6 +1,7 @@
 import { TransferService } from './../Services/transfer.service';
 import { AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
 import { User } from '../Shared/Users';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -9,26 +10,28 @@ import { User } from '../Shared/Users';
 })
 export class HomeComponent implements OnInit {
 
-  users!:any;
-  constructor(private trans:TransferService) {
+  users!:Array<User>;
+  constructor(private trans:TransferService,private fb:FormBuilder) {
   }
-
+form = this.fb.group({
+  "sender":['',Validators.required],
+  "reciever":['',Validators.required],
+  "money":['',Validators.required]
+});
 
   ngOnInit(): void {
     this.getUsers();
     console.log(this.users);
   }
-  print(id:any){
-    console.log(id);
+  print(){
+    console.log(this.form.value);
   }
   getUsers(){
-    setInterval(()=>{
+
       this.trans.getAllUsers().subscribe(data=>{
       this.users = data;
-    });
     console.log(this.users);
-    },200)
-
+    });
   }
 
 }
