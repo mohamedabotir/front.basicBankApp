@@ -23,9 +23,16 @@ export class HomeComponent implements OnInit{
   constructor(private trans:TransferService,private fb:FormBuilder,private toast:ToastrService) {
 
   }
-
+  public users?:User[];
+  getUsers(){
+        this.users = [];
+         this.trans.getAllUsers().subscribe(data=>{
+          this.users = data;
+       });
+     }
 
   ngOnInit(): void {
+   this.getUsers();
   }
   print(){
     console.log(this.form.value);
